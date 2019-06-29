@@ -1,0 +1,42 @@
+<view class="container">
+  <view class="weui-cells weui-cells_form">
+    <view class="weui-cell">
+      <view class="weui-cell__hd">
+        <view class="weui-label">水果名称</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input"
+          placeholder="请输入水果名称、重量等"
+          value="{{form.name}}"
+          bindinput="onInput"
+          data-type="name"
+        />
+      </view>
+    </view>
+    <view class="weui-cell">
+      <view class="weui-cell__hd">
+        <view class="weui-label">水果价格</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" type="digit"
+          placeholder="请输入水果每份的价格"
+          value="{{form.price}}"
+          bindinput="onInput"
+          data-type="price"
+        />
+      </view>
+    </view>
+    <view class="weui-cell">
+      <view class="weui-cell__hd">
+        <view class="weui-label">水果图片</view>
+      </view>
+      <view class="weui-cell__bd">
+        <button class="weui-btn weui-btn_plain-default" bindtap="doUpload">点击上传图片</button>
+      </view>
+    </view>
+    <image class="preview" mode="widthFix" wx:if="{{form.imageId}}" src="{{form.imageId}}" />
+  </view>
+  <view class="weui-btn-area">
+    <button class="weui-btn weui-btn_success" bindtap="onSave">保存</button>
+  </view>
+</view>
